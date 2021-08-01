@@ -39,7 +39,7 @@ for jj=1:nsteps
     std_GDP(jj) = sqrt(ww*(IR.IRf_GDP(:,jj)-IRw.IRf_wGDP(jj)).^2);
 end
 IRw.IRf_inf_wVOL = IRw.IRf_wVOL - 2.*std_VOL; IRw.IRf_sup_wVOL = IRw.IRf_wVOL + 2.*std_VOL; 
-IRw.IRf_inf_wGDP = IRw.IRf_wGDP - 2.*std_VOL; IRw.IRf_sup_wGDP = IRw.IRf_wGDP + 2.*std_VOL; 
+IRw.IRf_inf_wGDP = IRw.IRf_wGDP - 2.*std_GDP; IRw.IRf_sup_wGDP = IRw.IRf_wGDP + 2.*std_GDP; 
 
     
 %% 3. IMPULSE RESPONSE TO "G" FACTOR (Wold)
@@ -66,7 +66,7 @@ for jj=1:nsteps
     std_GDP(jj) = sqrt(ww*(IR.IRg_GDP(:,jj)-IRw.IRg_wGDP(jj)).^2);
 end
 IRw.IRg_inf_wVOL = IRw.IRg_wVOL - 2.*std_VOL; IRw.IRg_sup_wVOL = IRw.IRg_wVOL + 2.*std_VOL; 
-IRw.IRg_inf_wGDP = IRw.IRg_wGDP - 2.*std_VOL; IRw.IRg_sup_wGDP = IRw.IRg_wGDP + 2.*std_VOL; 
+IRw.IRg_inf_wGDP = IRw.IRg_wGDP - 2.*std_GDP; IRw.IRg_sup_wGDP = IRw.IRg_wGDP + 2.*std_GDP; 
 
 
 %% 4. IMPULSE RESPONSE TO COUNTRY-SPECIFIC VOL
